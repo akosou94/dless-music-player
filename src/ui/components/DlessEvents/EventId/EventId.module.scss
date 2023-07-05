@@ -1,0 +1,148 @@
+@import '@/styles/sass/grid.scss';
+
+.wrapper {
+  display: flex;
+  width: 100%;
+  padding: 45px 0 10px;
+  li {
+    list-style: none;
+  }
+}
+
+.dataEvent {
+  &__number {
+    font-size: 60px;
+    font-weight: 700;
+  }
+
+  &__month {
+    font-size: 22px;
+    background: var(--gradient);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+  &__year,
+  &__time {
+    font-size: 15px;
+    filter: contrast(20%);
+  }
+}
+
+.eventInfo {
+  &__left {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    padding: 10px;
+  }
+  &__right {
+    width: 50%;
+  }
+  &__image {
+    width: 180px;
+    height: 160px;
+    img {
+      height: 100%;
+      width: 100%;
+      border-radius: 5px;
+    }
+  }
+  &__texts {
+    margin: 0 40px;
+    display: flex;
+    flex-direction: column;
+    &:first-child {
+      margin-left: 0;
+    }
+    li {
+      padding-bottom: 10px;
+    }
+  }
+
+  &__title {
+    font-size: 35px;
+    background: var(--gradient);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    font-weight: bold;
+  }
+  &__place {
+    font-size: 20px;
+    filter: contrast(20%);
+  }
+  &__author {
+    font-size: 15px;
+    filter: contrast(20%);
+    margin-bottom: 20px;
+  }
+  &__links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 35px;
+    border-radius: 2px;
+    margin-bottom: 10px;
+    padding: 0 10px;
+    background: var(--gradient);
+    outline: none;
+    box-shadow: none;
+    border: none;
+    border-radius: 5px;
+    color: var(--whtie);
+  }
+}
+
+@include mq(tablet) {
+  .wrapper {
+    flex-direction: column;
+  }
+  .dataEvent {
+    &__number {
+      font-size: 40px;
+    }
+    &__month {
+      font-size: 22px;
+    }
+    &__year,
+    &__time {
+      font-size: 15px;
+    }
+  }
+  .eventInfo {
+    &__texts {
+      margin: 0;
+      display: flex;
+      align-items: center;
+
+      li {
+        padding-bottom: 0;
+        margin-left: 10px;
+      }
+    }
+    &__left {
+      flex-direction: column;
+      flex-wrap: nowrap;
+      width: 100%;
+      align-items: center;
+    }
+    &__right {
+      width: 100%;
+    }
+  }
+}
+@include mq(XSphone) {
+  .eventInfo {
+    &__texts {
+      flex-direction: column;
+    }
+    &__title {
+      font-size: 20px;
+    }
+  }
+}

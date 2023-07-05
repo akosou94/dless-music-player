@@ -1,0 +1,108 @@
+@import '@/styles/sass/grid.scss';
+
+.search {
+  width: 100%;
+  max-width: 300px;
+  margin-left: 15px;
+
+  strong {
+    color: var(--white-90);
+  }
+  &__fields {
+    appearance: none;
+    border: none;
+    border-radius: 3px;
+    box-sizing: border-box;
+    padding: 8px 10px;
+    outline: none;
+    background: var(--gray-60);
+    color: var(--white-50);
+    width: 100%;
+    display: block;
+    font-size: 12px;
+    transition: background 0.15s;
+    &:hover {
+      background: var(--gray-80);
+    }
+    &:focus {
+      background: var(--gray);
+    }
+  }
+
+  &__overflow {
+    pointer-events: none;
+    z-index: 1;
+    transition: opacity 0.15s;
+    opacity: 0;
+    top: 60px;
+    position: absolute;
+    background: var(--gray-90);
+    width: 600px;
+    border-radius: 5px;
+    box-shadow: 0 10px 10px var(--black-10);
+    padding: 10px;
+    max-height: calc(100vh - 220px);
+    &__active {
+      pointer-events: auto;
+      opacity: 1;
+    }
+  }
+
+  .item {
+    cursor: pointer;
+    padding: 5px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    border-radius: 5px;
+    transition: background 0.15s;
+    display: flex;
+    align-items: center;
+    color: var(--white-50);
+    &:hover {
+      background: var(--white-10);
+    }
+    &__cover {
+      width: 30px;
+      height: 30px;
+      background: var(--gray-80);
+      border-radius: 5px;
+      overflow: hidden;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 5px;
+      }
+    }
+    &__info {
+      width: calc(100% - 30px);
+      overflow: hidden;
+      text-overflow: ellipsis;
+      padding-left: 10px;
+    }
+  }
+}
+
+@include mq(tablet) {
+  .search {
+    &__overflow {
+      width: auto;
+      &__active {
+        width: calc(100% - 150px);
+      }
+    }
+  }
+}
+@include mq(Lphone) {
+  .search {
+    &__overflow {
+      left: 0;
+      &__active {
+        width: 100%;
+      }
+    }
+  }
+}

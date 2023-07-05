@@ -1,0 +1,20 @@
+$grid-breakpoints: (
+  'XSphone': 280px,
+  'Sphone': 320px,
+  'Mphone': 375px,
+  'Lphone': 425px,
+  'tablet': 768px,
+  'SMdesktop': 1024px,
+  'desktop': 1366px,
+  'LGdesktop': 1600px,
+) !default;
+
+@mixin mq($v) {
+  @each $name, $size in $grid-breakpoints {
+    @if $name == $v {
+      @media screen and (max-width: $size) {
+        @content;
+      }
+    }
+  }
+}

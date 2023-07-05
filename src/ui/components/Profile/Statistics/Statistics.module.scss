@@ -1,0 +1,60 @@
+@import "@/styles/sass/grid.scss";
+
+.wrapper {
+  border-bottom: 10px solid var(--background);
+}
+
+.title {
+  font-size: 30px;
+  text-align: center;
+  span {
+    color: var(--ui-color-one);
+  }
+}
+
+.userInfo {
+  display: flex;
+  flex-direction: column;
+
+  font-size: 20px;
+  &__item {
+    margin-top: 10px;
+  }
+}
+
+.userStat {
+  &__list {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-wrap: wrap;
+    padding: 10px 0 25px;
+  }
+  &__item {
+    margin: 10px 10px;
+    padding: 10px 10px;
+    p {
+      font-size: 15px;
+    }
+    span {
+      font-size: 55px;
+    }
+  }
+  &__title {
+    color: var(--ui-color-two);
+  }
+}
+
+@include mq(Sphone) {
+  .userStat {
+    &__list {
+      flex-wrap: nowrap;
+      flex-direction: column;
+    }
+    &__item {
+      span {
+        font-size: 40px;
+      }
+    }
+  }
+}

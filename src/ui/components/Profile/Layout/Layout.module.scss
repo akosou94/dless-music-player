@@ -1,0 +1,49 @@
+@import '@/styles/sass/grid.scss';
+.profile {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+
+  &__menu {
+    max-width: 200px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background: var(--black-30);
+    border-radius: 5px;
+  }
+
+  &__content {
+    width: calc(100% - 240px);
+    display: flex;
+    flex-direction: column;
+    padding: 10px 0;
+    border-radius: 5px;
+  }
+}
+@include mq(tablet) {
+  .profile {
+    &__menu {
+      max-width: 170px;
+    }
+    &__content {
+      width: 100%;
+    }
+  }
+}
+
+@include mq(Lphone) {
+  .profile {
+    flex-direction: column;
+    &__menu {
+      width: 100%;
+      max-width: none;
+    }
+    &__content {
+      margin-top: 10px;
+      width: 100%;
+    }
+  }
+}

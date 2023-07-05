@@ -1,0 +1,89 @@
+@import '@/styles/sass/grid.scss';
+
+.uploaded {
+  &__title {
+    font-size: 25px;
+    color: var(--ui-color-three);
+  }
+  &__list {
+    display: flex;
+    flex-direction: column;
+    margin-top: 5px;
+    width: 100%;
+    min-height: 120px;
+    padding: 0 10px;
+    border-radius: 5px;
+  }
+  &__item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-height: 50px;
+    margin: 5px 0;
+    padding: 10px;
+    border: 2px solid var(--gray-80);
+    border-radius: 5px;
+    &:hover {
+      transition: 0.5s;
+      background-color: var(--gray-20);
+      border: 2px solid var(--white-50);
+      cursor: pointer;
+    }
+  }
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  &__add {
+    margin: 0 4px;
+    width: 30px;
+    height: 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    outline: none;
+    border: 1px solid var(--ui-color-one);
+    background: var(--gray-10);
+    color: var(--white);
+    transition: background 0.5s;
+    &:hover,
+    &:active {
+      background-color: var(--ui-color-one);
+    }
+  }
+  &__upload {
+    width: 100%;
+    height: 40px;
+    font-size: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    outline: none;
+    border: 1px solid var(--ui-color-two);
+    background: var(--gray-10);
+    color: var(--white);
+    transition: background 0.5s;
+    &:hover,
+    &:active {
+      background-color: var(--ui-color-two);
+    }
+  }
+}
+
+.image {
+  margin: 0 4px;
+  width: 30px;
+  height: 30px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+@include mq(SMdesktop) {
+  .uploaded {
+    &__title {
+      margin-top: 20px;
+      text-align: center;
+      font-size: 25px;
+      color: var(--ui-color-three);
+    }
+  }
+}

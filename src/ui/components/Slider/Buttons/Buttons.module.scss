@@ -1,0 +1,30 @@
+.button {
+  display: flex;
+  justify-content: space-between;
+  font-size: 35px;
+  user-select: none;
+  &__left,
+  &__right {
+    margin: auto;
+    position: absolute;
+    top: 0;
+    bottom: 20px;
+    cursor: pointer;
+    color: var(--slider-button-color);
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    width: 15px;
+    height: 15px;
+    border-top: 4px solid var(--white);
+    border-left: 4px solid var(--white);
+  }
+  &__left {
+    left: 20px;
+    transform: rotate(-45deg);
+  }
+  &__right {
+    right: 20px;
+    transform: rotate(135deg);
+  }
+}

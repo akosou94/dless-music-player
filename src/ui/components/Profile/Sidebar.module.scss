@@ -1,0 +1,77 @@
+@import '@/styles/sass/grid.scss';
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  opacity: 1;
+  border-radius: 5px;
+  padding: 10px 10px;
+  position: relative;
+}
+.mobile {
+  display: none;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  &__label {
+    display: flex;
+    flex-direction: column;
+    width: calc(100% - 5px);
+    padding: 10px 10px;
+    font-size: 18px;
+    border-radius: 5px;
+    opacity: 0.5;
+    &:hover {
+      background: var(--ui-color-one);
+      transition: all 0.8s;
+      opacity: 1;
+    }
+  }
+}
+.logout {
+  margin-top: 10px;
+  cursor: pointer;
+  height: 40px;
+  outline: none;
+  border: 1px solid var(--ui-color-one);
+  background: var(--gray-10);
+  color: var(--white);
+  transition: background 1s;
+  border-radius: 5px;
+  &:hover,
+  &:active {
+    background-color: var(--ui-color-one);
+  }
+}
+
+@include mq(Lphone) {
+  .wrapper {
+    padding: 10px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+  .mobile {
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    padding: 5px;
+
+    color: var(--white-80);
+    &:hover {
+      color: var(--white);
+
+      background: var(--ui-color-one);
+      transition: all 0.8s;
+      opacity: 1;
+      border-radius: 5px;
+    }
+  }
+  .logout,
+  .item__label {
+    display: none;
+  }
+}

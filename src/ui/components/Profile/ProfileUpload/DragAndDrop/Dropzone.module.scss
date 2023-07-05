@@ -1,0 +1,64 @@
+@import '@/styles/sass/grid.scss';
+
+.dropzone {
+  &__title {
+    font-size: 25px;
+    color: var(--ui-color-two);
+  }
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5px;
+    padding: 20px;
+    width: 400px;
+    min-height: 157px;
+    border: 2px dashed var(--gray-50);
+    border-radius: 5px;
+    &__active {
+      transition: all 0.5s;
+      border: 2px dashed var(--ui-color-one);
+    }
+  }
+  &__info {
+    margin-top: 10px;
+    font-size: 15px;
+    text-align: center;
+  }
+  &__input {
+    margin-top: 10px;
+    width: 100%;
+    height: 35px;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: var(--gray-50);
+    color: var(--white-50);
+    transition: background 0.15s, box-shadow 0.15s;
+    outline: none;
+    border: none;
+    &:valid {
+      border: 2px solid var(--success);
+    }
+  }
+}
+
+.loaderPlaylist {
+  display: flex;
+  justify-content: flex-end;
+}
+
+@include mq(SMdesktop) {
+  .dropzone {
+    &__wrapper {
+      width: 100%;
+    }
+  }
+}
+@include mq(tablet) {
+  .dropzone {
+    &__wrapper {
+      width: 100%;
+    }
+  }
+}

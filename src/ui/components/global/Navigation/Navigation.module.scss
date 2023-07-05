@@ -1,0 +1,108 @@
+@import "@/styles/sass/grid.scss";
+
+.nav {
+  &__btn {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    position: relative;
+    &:before,
+    &:after {
+      content: "";
+      margin: auto;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+    }
+    &:before {
+      background: linear-gradient(to bottom, var(--gray) 4px, transparent 4px);
+      background-size: auto 8px;
+    }
+    &:hover:before {
+      background: linear-gradient(to bottom, var(--white-50) 4px, transparent 4px);
+      background-size: auto 8px;
+    }
+    &_active {
+      transform: rotate(45deg);
+      &:before,
+      &:after {
+        background: var(--gray) !important;
+      }
+      &:before {
+        width: 4px;
+      }
+      &:after {
+        height: 4px;
+      }
+    }
+  }
+
+  &__box {
+    background: var(--gray-90);
+    margin: auto;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 10px 10px var(--black-10);
+    box-sizing: border-box;
+    max-width: 1400px;
+    display: flex;
+    flex-wrap: wrap;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.1s, transform 0.1s;
+    pointer-events: none;
+    align-items: center;
+    &_active {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+  }
+
+  &__link {
+    display: block;
+    width: 25%;
+    text-align: center;
+    padding: 10px 20px;
+    transition: background 0.1s;
+    border-radius: 10px;
+    &:hover {
+      background: var(--white-10);
+    }
+  }
+}
+
+@include mq(SMdesktop) {
+  .nav {
+    &__link {
+      padding: 5px 20px;
+      font-size: 15px;
+    }
+  }
+}
+@include mq(tablet) {
+  .nav {
+    &__link {
+      padding: 5px 20px;
+      font-size: 14px;
+    }
+  }
+}
+
+@include mq(Lphone) {
+  .nav {
+    &__link {
+      padding: 5px 0;
+      font-size: 10px;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
+  }
+}

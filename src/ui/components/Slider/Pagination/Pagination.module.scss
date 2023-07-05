@@ -1,0 +1,23 @@
+.links {
+  display: flex;
+  position: absolute;
+  margin-top: 5px;
+  top: 100%;
+  left: 0;
+  right: 0;
+  &__points {
+    flex: 1;
+    height: 6px;
+    background: var(--white-20);
+    margin-left: 6px;
+    border-radius: 2px;
+    transition: background 0.1s;
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+
+  &__active {
+    background: var(--white);
+  }
+}

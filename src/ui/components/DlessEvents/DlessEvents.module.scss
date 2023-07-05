@@ -1,0 +1,204 @@
+
+@import '@/styles/sass/grid.scss';
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  min-height: 260px;
+  border-top: 2px solid var(--white-10);
+  li {
+    list-style: none;
+  }
+  img {
+    width: 180px;
+    height: 160px;
+    border-radius: 5px;
+  }
+}
+
+.dataEvent {
+  &__number {
+    font-size: 60px;
+    font-weight: 700;
+  }
+  &__month {
+    font-size: 22px;
+    background: var(--gradient);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+  &__year,
+  &__time {
+    font-size: 15px;
+    filter: contrast(20%);
+  }
+}
+
+.eventInfo {
+  display: flex;
+  align-items: center;
+  &__left {
+    display: flex;
+    justify-content: space-between;
+    width: 300px;
+  }
+  &__right {
+    display: flex;
+    flex-direction: column;
+    width: calc(100% - 320px);
+    padding: 10px;
+  }
+  &__texts {
+    display: flex;
+    flex-direction: column;
+    &:first-child {
+      margin-left: 0;
+    }
+    li {
+      padding-bottom: 10px;
+    }
+  }
+  &__button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 150px;
+    height: 35px;
+    border-radius: 2px;
+    margin-bottom: 10px;
+    padding: 0 10px;
+    background: var(--gradient);
+    outline: none;
+    box-shadow: none;
+    border: none;
+    border-radius: 5px;
+    color: var(--whtie);
+  }
+  &__title {
+    font-size: 24px;
+    background: var(--gradient-text);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    font-weight: bold;
+  }
+  &__place {
+    font-size: 20px;
+    filter: contrast(20%);
+  }
+  &__author {
+    padding: 10px 0;
+    font-size: 15px;
+    filter: contrast(20%);
+  }
+}
+
+@include mq(SMdesktop) {
+  .eventInfo {
+    &__right {
+      width: 100%;
+    }
+    &__title {
+      font-size: 20px;
+    }
+  }
+}
+@include mq(tablet) {
+  .wrapper {
+    img {
+      width: 150px;
+      height: auto;
+    }
+  }
+  .dataEvent {
+    &__number {
+      font-size: 35px;
+    }
+  }
+  .eventInfo {
+    &__texts {
+      &:first-child {
+        margin-right: 2px;
+      }
+    }
+    &__button {
+      width: 100%;
+    }
+    &__right {
+      width: 100%;
+    }
+    &__title {
+      font-size: 15px;
+    }
+    &__place {
+      font-size: 15px;
+    }
+  }
+}
+
+@include mq(Lphone) {
+  .wrapper {
+    display: block;
+    img {
+      width: 150px;
+      height: 120px;
+    }
+  }
+  .dataEvent {
+    &__number {
+      font-size: 35px;
+    }
+    &__month {
+      transform: translateY(2px);
+    }
+    &__time,
+    &__year {
+      transform: translateY(5px);
+    }
+  }
+  .eventInfo {
+    text-align: center;
+
+    &__title {
+      font-size: 15px;
+      text-align: center;
+    }
+    &__place {
+      font-size: 12px;
+    }
+    &__author {
+      font-size: 12px;
+      text-align: center;
+      padding-top: 5px;
+      margin-bottom: 20px;
+    }
+    &__left {
+      flex-wrap: nowrap;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      padding-top: 20px;
+      width: 100%;
+    }
+    &__right {
+      width: 100%;
+      justify-content: center;
+      align-items: center;
+    }
+    &__texts {
+      align-items: center;
+
+      flex-direction: row;
+      position: relative;
+      li {
+        margin-right: 5px;
+        padding-bottom: 0;
+      }
+    }
+  }
+}
+

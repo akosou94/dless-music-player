@@ -1,0 +1,36 @@
+{
+  "name": "decalessensreact",
+  "version": "0.1.0",
+  "private": true,
+  "_moduleAliases": {
+    "@": "dist"
+  },
+  "scripts": {
+    "dev": "node server.js",
+    "build": "next build && node tmp.js",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.3.0",
+    "@fortawesome/free-regular-svg-icons": "^6.3.0",
+    "@fortawesome/free-solid-svg-icons": "^6.3.0",
+    "@fortawesome/react-fontawesome": "^0.2.0",
+    "@next/font": "13.1.6",
+    "@reduxjs/toolkit": "^1.9.5",
+    "@types/node": "^18.16.3",
+    "module-alias": "^2.2.2",
+    "next": "13.1.6",
+    "next-auth": "^4.20.1",
+    "nextjs-progressbar": "^0.0.16",
+    "qs": "^6.11.1",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-redux": "^8.0.5",
+    "sass": "^1.58.0",
+    "typescript": "^5.0.4"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.0"
+  }
+}

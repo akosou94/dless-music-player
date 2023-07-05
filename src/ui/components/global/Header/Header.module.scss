@@ -1,0 +1,36 @@
+@import "@/styles/sass/grid.scss";
+
+.header {
+  padding: 14px 0;
+  border-bottom: 1px solid var(--gray-60);
+  position: relative;
+  &__box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__left {
+    width: 95px;
+  }
+  &__right {
+    width: 170px;
+  }
+  &__center {
+    width: calc(100% - 265px);
+    display: flex;
+    align-items: center;
+  }
+}
+@include mq(Lphone) {
+  .header {
+    &__right {
+      width: 40px;
+    }
+    &__center {
+      width: calc(100% - 120px);
+    }
+    &__left {
+      width: 20px;
+    }
+  }
+}

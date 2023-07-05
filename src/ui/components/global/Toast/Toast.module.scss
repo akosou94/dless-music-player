@@ -1,0 +1,66 @@
+.container {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 9999;
+}
+
+.notification {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  align-items: center;
+  border-radius: 4px;
+  animation: fadeIn 0.15s;
+  animation-fill-mode: both;
+  padding: 15px;
+  &.error {
+    background: #ffdddd;
+    color: red;
+  }
+  &.warn {
+    background: var(--warn);
+  }
+  &.success {
+    background: var(--success);
+  }
+
+  &:hover {
+    background: #ffd1d1;
+    opacity: 1;
+  }
+
+  &__message {
+    display: flex;
+    flex-direction: column;
+    .title {
+      font-weight: bold;
+      font-size: 18px;
+    }
+  }
+  button {
+    cursor: pointer;
+    background: red;
+    color: var(--white);
+    outline: none;
+    border: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(50%, -50%);
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translate(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0%);
+  }
+}

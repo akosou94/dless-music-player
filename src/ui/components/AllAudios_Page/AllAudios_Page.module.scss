@@ -1,0 +1,21 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+}
+.options {
+  padding-bottom: 10px;
+}
+.showMoreTrack {
+  width: 100%;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 5px;
+  outline: none;
+  border: 1px solid var(--ui-color-one);
+  background: var(--gray-10);
+  color: var(--white);
+  transition: background 1s;
+  &:hover {
+    background: var(--ui-color-one);
+  }
+}

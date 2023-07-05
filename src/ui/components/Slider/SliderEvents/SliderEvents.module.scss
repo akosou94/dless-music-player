@@ -1,0 +1,102 @@
+@import '@/styles/sass/grid.scss';
+
+.events {
+  &__wrapper {
+    width: 100%;
+  }
+  &__slides {
+    width: 100%;
+    max-height: 500px;
+    height: 500px;
+    border-radius: 5px;
+    object-fit: none;
+    cursor: pointer;
+  }
+
+  &__list {
+    position: absolute;
+    display: flex;
+    bottom: 7px;
+    left: 7px;
+    right: 7px;
+    padding: 15px 20px;
+    border-radius: 5px;
+    background: var(--black-80);
+  }
+  &__blur {
+    position: absolute;
+    bottom: 7px;
+    left: 7px;
+    right: 7px;
+    padding: 15px 20px;
+    border-radius: 5px;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(50px);
+  }
+  &__gradient {
+    position: absolute;
+    bottom: 7px;
+    left: 7px;
+    right: 7px;
+    padding: 15px 20px;
+    border-radius: 5px;
+    background: var(--gradient);
+    backdrop-filter: blur(50px);
+  }
+  &__none {
+    position: absolute;
+    bottom: 7px;
+    left: 7px;
+    right: 7px;
+    padding: 15px 20px;
+    border-radius: 5px;
+  }
+  &__item {
+    font-size: 20px;
+    list-style-type: none;
+    &:last-child {
+      font-size: 15px;
+      opacity: 0.6;
+    }
+  }
+  &__description {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2px 10px;
+    &__date {
+      font-size: 20px;
+    }
+    &__time {
+      font-size: 15px;
+      opacity: 0.6;
+    }
+  }
+}
+
+@include mq(Lphone) {
+  .events {
+    &__slides {
+      max-height: 300px;
+      height: 300px;
+    }
+    &__list {
+      padding: 5px 0px;
+    }
+  }
+}
+
+@include mq(Sphone) {
+  .events {
+    &__slides {
+      max-height: 300px;
+      height: 300px;
+    }
+    &__list {
+      padding: 5px 0px;
+    }
+    &__item {
+      font-size: 15px;
+    }
+  }
+}

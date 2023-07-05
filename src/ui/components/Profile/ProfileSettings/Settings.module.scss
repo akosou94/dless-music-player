@@ -1,0 +1,78 @@
+@import '@/styles/sass/grid.scss';
+
+.title {
+  font-size: 30px;
+  text-align: center;
+}
+.user {
+  margin: 0 10px;
+}
+.settings {
+  display: flex;
+  flex-direction: column;
+  &__list,
+  .user {
+    display: flex;
+    flex-direction: column;
+    padding: 5px 5px;
+    font-size: 15px;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+  }
+
+  &__button {
+    margin: 0 5px 20px;
+    width: 100px;
+    height: 40px;
+    border-radius: 5px;
+    cursor: pointer;
+    outline: none;
+    border: 1px solid var(--ui-color-one);
+    background: var(--gray-10);
+    color: var(--white);
+    transition: background 0.5s;
+    &:hover,
+    &:active {
+      background-color: var(--ui-color-one);
+    }
+  }
+  &__input {
+    display: block;
+    appearance: none;
+    border-radius: 5px;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+    font-size: 15px;
+    padding: 5px;
+    width: 250px;
+    height: 40px;
+    background: var(--gray-60);
+    color: var(--white-50);
+    transition: background 0.15s, box-shadow 0.15s;
+    &:hover {
+      background: var(--gray-80);
+    }
+    &:focus {
+      background: var(--background);
+      box-shadow: 0 0 0 2px var(--ui-color-one),
+        0 0 0 4px rgba(var(--ui-color-one-rgb), 0.5);
+    }
+  }
+}
+.label {
+  font-size: 15px;
+  color: var(--white-30);
+  padding: 0 5px;
+}
+@include mq(tablet) {
+  .settings {
+    &__input {
+      width: calc(100% + 20px);
+    }
+  }
+}
