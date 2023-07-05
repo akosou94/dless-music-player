@@ -1,5 +1,5 @@
 # dless-music-player
- Музыкальный плеер - <a href='dless.ru'>dless.ru</a>
+## Тестовый домен https://dless.ru/
  
 <h2>Главная страница</h2>
 <img width="1651" alt="Снимок экрана 2023-07-05 в 14 43 00" src="https://github.com/akosou94/dless-music-player/assets/122616263/b6dcd2a5-8fa8-4aa0-a37a-92dbf0005719">
